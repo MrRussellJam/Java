@@ -1,0 +1,53 @@
+
+
+public class SharedBikeOfLittleGreen extends SharedBike{
+    boolean isScanned=false;
+	public SharedBikeOfLittleGreen(String anId) {
+		super(anId);
+		// TODO Auto-generated constructor stub
+	}
+
+	public SharedBikeOfLittleGreen() {
+		super("13qw");
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public boolean toBeBorrowed(){
+	   // step 1 : check whther it is shared
+	   boolean canbeBorrowed=super.toBeBorrowed();
+       if (!canbeBorrowed){
+    	   return false;
+       }
+       // step 2 : use my little green card to scan
+       //this.personScanCard();
+       return false;
+	}
+	public void toBeReturned(){
+		this.isShared=false;
+	
+	}
+	public void personScanCard(){
+		// private
+		this.scanCardStep1();
+		this.scanCardStep2();
+		this.isScanned=true;
+		
+	}
+	private void scanCardStep1(){
+		// do sth
+	}
+	private void scanCardStep2(){
+		// do sth
+	}
+
+	@Override
+	public void toBePaid() {
+		// TODO Auto-generated method stub
+		System.out.println("Paid by Student Card....");
+	}	
+}

@@ -1,0 +1,5 @@
+
+public class Dormitory17 {
+	final int roommates = 5;
+	
+}

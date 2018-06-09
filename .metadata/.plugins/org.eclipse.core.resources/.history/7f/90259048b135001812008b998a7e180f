@@ -1,0 +1,61 @@
+public class Zhbit {
+	Humanbeing aListOfPerson []=null;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        //String s=  "I am hjjhjhjhjh Zhbit hjjhhjhjhjhj ";
+		//System.out.print(s);
+		//System.exit(1);
+		
+		
+		int debug=0;
+		
+		String whatLabel=Bike.manufactoryLabel;
+		
+		Bike.manufactoryLabel="jhjhhj";
+		// Person a
+		Humanbeing aPerson=new Humanbeing("¶Åî£");
+		SharedBikeOfLittleGreen aBike=new SharedBikeOfLittleGreen("bike001");
+		aBike.personScanCard();
+		aPerson.ride(aBike);
+		
+		String whatLabelA=aBike.manufactoryLabel;
+
+		// Person b
+		Humanbeing bPerson=new Humanbeing("»ÆÏþì¿");
+		Bike bBike=new Bike("bike002");
+		bPerson.ride(bBike);
+
+		String whatLabelB=aBike.manufactoryLabel;
+		
+		// Person c
+		Humanbeing cPerson=new Humanbeing("ºÎºÆ");
+		Bike cBike=new Bike("bike003");
+		cPerson.ride(cBike);
+		
+		Humanbeing dPerson=new Humanbeing("»ÆÒÁÄþ");
+		Bike dBike=new Bike("bike004");
+		dPerson.ride(dBike);
+		
+		//
+		Zhbit zhbit=new Zhbit();
+		// start to go to Java course
+		zhbit.aListOfPerson=new Humanbeing[4];
+		
+		zhbit.aListOfPerson[0]=aPerson;
+		zhbit.aListOfPerson[1]=bPerson;
+		zhbit.aListOfPerson[2]=cPerson;
+		zhbit.aListOfPerson[3]=dPerson;
+		
+		for(int i = 0;i < 4;i++) {
+			System.out.println("ÐÕÃû:" + zhbit.aListOfPerson[i].name + 
+					"\n" + "±àºÅ:" + zhbit.aListOfPerson[i].aBikeRidden.id + "\n");
+		}
+		
+		debug=1;
+		
+	}
+
+}

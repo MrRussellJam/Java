@@ -1,0 +1,124 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Zhbit {
+	Humanbeing aListOfPerson []=null;
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+        //String s=  "I am hjjhjhjhjh Jabbed hjjhhjhjhjhj ";
+		//System.out.print(s);
+		//System.exit(1);
+		
+		ArrayList<String> list = new ArrayList<String>();
+		
+		int debug=0;
+		
+		File f1 = new File("grouplist.txt");
+		
+		Scanner fp = new Scanner(f1);
+		while(fp.hasNext()) {
+			String sDemo = fp.nextLine();
+			System.out.println(sDemo);
+		}
+		
+		
+		String whatLabel=Bike.manufactoryLabel;
+		
+		Bike.manufactoryLabel="jhjhhj";
+		// Person a
+		Humanbeing aPerson=new Humanbeing("¶Åî£");
+		SharedBikeOfLittleGreen aBike=new SharedBikeOfLittleGreen("bike001");
+		aBike.personScanCard();
+		aPerson.ride(aBike);
+		
+		String whatLabelA=aBike.manufactoryLabel;
+
+		// Person b
+		Humanbeing bPerson=new Humanbeing("»ÆÏþì¿");
+		SharedBikeOfOfO bBike=new SharedBikeOfOfO("bike002");
+		bPerson.ride(bBike);
+
+		String whatLabelB=aBike.manufactoryLabel;
+		
+		// Person c
+		Humanbeing cPerson=new Humanbeing("ºÎºÆ");
+		SharedBikeOfHello cBike=new SharedBikeOfHello("bike003");
+		cPerson.ride(cBike);
+		
+		Humanbeing dPerson=new Humanbeing("»ÆÒÁÄþ");
+		SharedBikeOfHello dBike=new SharedBikeOfHello("bike004");
+		dPerson.ride(dBike);
+		
+		//
+		Zhbit zhbit=new Zhbit();
+		// start to go to Java course
+		zhbit.aListOfPerson=new Humanbeing[4];
+		
+		zhbit.aListOfPerson[0]=aPerson;
+		zhbit.aListOfPerson[1]=bPerson;
+		zhbit.aListOfPerson[2]=cPerson;
+		zhbit.aListOfPerson[3]=dPerson;
+		
+		for(int i = 0;i < 4;i++){
+			list.add("\nÐÕÃû:" + zhbit.aListOfPerson[i].name 
+					+ "\n" + "±àºÅ:" + zhbit.aListOfPerson[i].aBikeRidden.id 
+					+ "\n"+ "ÕýÔÚÆï" + zhbit.aListOfPerson[i].aBikeRidden.bussiness + "\n");
+		}
+
+		
+		System.out.println(list);
+		
+		File f= new File("outputList.txt") ;
+		
+		BufferedWriter bw=new BufferedWriter(new FileWriter(f));
+	    for(int i=0;i<list.size();i++){
+	    	bw.write(list.get(i));
+	    	bw.newLine();
+	    }
+	    bw.close();
+	    
+	    BufferedReader br = new BufferedReader(new FileReader(f));
+	    
+	    HashMap hm = new HashMap();
+	    
+	    ArrayList<String> arr = new ArrayList<String>();
+	    
+	    Scanner sc = new Scanner(f);
+	    
+	    int i=1;
+	    
+	    while(sc.hasNextLine()) {
+	    	arr.add(sc.nextLine());
+	    }
+	    
+	    hm.put(i,arr);
+	    
+	    System.out.println(hm);
+	    
+	    System.out.println(hm.toString());
+	    
+	    
+	    while(br.ready()) {
+	    	String s = br.readLine();
+	    	System.out.print(s);
+	    	System.out.print("\n");
+	    }
+	    
+		debug=1;
+		
+	}
+
+}

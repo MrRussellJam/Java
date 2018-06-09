@@ -1,0 +1,50 @@
+
+
+public class SharedBikeOfOfO extends SharedBike{
+
+	public SharedBikeOfOfO(String anId) {
+		super(anId);
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public boolean toBeBorrowed(){
+	   // step 1 : check whther it is shared
+	   boolean canbeBorrowed=super.toBeBorrowed();
+       if (!canbeBorrowed){
+    	   return false;
+       }
+       // step 2 : use my little green card to scan
+       this.personScanCellPhone();
+       return false;
+	}
+	private void personScanCellPhone() {
+		// TODO Auto-generated method stub
+		// private
+		this.scanCellPhoneStep1();
+		this.scanCellPhoneStep2();
+	}
+	private void scanCellPhoneStep1(){
+		// do sth
+	}
+	private void scanCellPhoneStep2(){
+		// do sth
+	}	
+	public void toBeReturned(){
+		this.isShared=false;
+	
+	}
+
+	@Override
+	public void toBePaid() {
+		// TODO Auto-generated method stub
+		System.out.println("Paid by ZhiFuBao....");
+	}
+	
+}
